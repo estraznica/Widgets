@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Запуск
+npm install, npm run dev
+# Задание
+Создать веб-приложение с системой виджетов в соответствии с требованиями:
+- на странице должны быть 3 колонки, в которые можно добавить виджеты
+- страница должна быть адаптивная и хорошо выглядеть на разных разрешениях экрана
+- виджеты должны иметь кнопку для удаления их со страницы
+- нужно иметь возможность добавлять несколько виджетов на страницу (в том числе один и тот же)
+- виджет может иметь настройки 
+- должна быть возможность переместить виджет в другую колонку на странице
+- приложение написано на React с использованием TypeScript
+- работоспособность в последней версии Google Chrome
+- зависимости не хранятся в проекте.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сверстать страницу с 3 колонкам и кнопкой добавления виджета.
+Реализовать как минимум два виджета, один из которых взаимодействует с внешним сервисом. Виджеты должны быть настраиваемыми. Значения для настройки виджета можно задать ограниченным списком в коде.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Примеры внешних сервисов:
+- Курс валюты в рублях
+- Настройка: валюту можно выбирать
+- Динамический вывод значения пары EUR/USD
+- Выделение цветом с плавной анимацией при изменении значения
+- Отображение стрелки (вверх/вниз) при движении значения
+- Настройка: валютную пару можно выбирать
+- Погода на сегодня в разных городах
+- Настройка: город можно выбирать.
