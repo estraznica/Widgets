@@ -1,7 +1,7 @@
 .currency {
   width: 100%;
-  min-height: 100px;
-  background-color: rgb(255, 149, 0);
-  margin-top: 5px;
-  margin-bottom: 5px;
+  min-height: 110px;
+  background-color: rgb(255, 149, 2);
+  border-radius: 4px;
+  margin-bottom: 15px;
 }

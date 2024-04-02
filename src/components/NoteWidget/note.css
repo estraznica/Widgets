@@ -1,5 +1,6 @@
 .note-area {
-  width: calculate(100%-5px);
+  box-sizing: border-box;
+  width: 100%;
   min-height: 40px;
   height: auto;
   border: 0px;

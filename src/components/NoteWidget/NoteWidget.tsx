@@ -9,8 +9,8 @@ export default function NoteWidget() {
   return (
     <>
       <textarea
-        value={note} // Устанавливаем текущее значение заметки
-        onChange={handleNoteChange} // Обрабатываем изменения
+        value={note}
+        onChange={handleNoteChange}
         placeholder="Введите заметку..."
         className="note-area"
       />
