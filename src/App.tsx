@@ -6,9 +6,9 @@ function App() {
   return (
     <>
       <main>
-        <Column id={'1'} type={' погоды'} />
-        <Column id={'2'} type={' валют'} />
-        <Column id={'3'} type={'-заметку'} />
+        <Column id={1} type={' погоды'} />
+        <Column id={2} type={' валют'} />
+        <Column id={3} type={'-заметку'} />
       </main>
     </>
   );

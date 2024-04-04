@@ -25,10 +25,31 @@ export default function Column({ id, type }: ColumnType) {
     const filteredWidgets = widgets.filter((widget) => widget.id !== id);
     setWidgets(filteredWidgets);
   }
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const widgetId = event.dataTransfer.getData('widgetId');
+    const draggedWidgetIndex = widgets.findIndex((widget) => widget.id === widgetId);
+    if (draggedWidgetIndex !== -1) {
+      const newWidgets = [...widgets];
+      newWidgets.splice(draggedWidgetIndex, 1);
+
+      const targetIndex = Array.from(event.currentTarget.children).findIndex((element) =>
+        element.contains(event.target as Node),
+      );
+      if (targetIndex !== -1) {
+        newWidgets.splice(targetIndex, 0, { ...widgets[draggedWidgetIndex], columnId: id });
+        setWidgets(newWidgets);
+      }
+    }
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
 
   return (
     <>
-      <div className="column">
+      <div className="column" onDrop={handleDrop} onDragOver={handleDragOver}>
         {widgets.map((widget) => (
           <Widget widget={widget} key={widget.id} deleteWidget={() => deleteWidget(widget.id)} />
         ))}
