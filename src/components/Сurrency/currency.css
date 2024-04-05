@@ -1,7 +1,26 @@
 .currency {
   width: 100%;
   min-height: 110px;
-  background-color: rgb(255, 149, 2);
+  background-color: rgb(196, 255, 198);
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+.today {
+  padding: 10px 0 0 10px;
+}
+.currency-values {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  align-items: center;
+}
+.select-currency {
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.currency-value {
+  margin-left: 20px;
+  font-size: 30px;
 }

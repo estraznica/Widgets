@@ -19,9 +19,11 @@ export default function App() {
         noteValue: '',
       };
     }
-    if (type == ' валюты') {
+    if (type == ' валют') {
       setting = {
-        currencyValue: '',
+        currency1: 'eur',
+        currency2: 'rub',
+        cur1tocur2: 100,
       };
     }
     const widgetToAdd: NewWidget = {

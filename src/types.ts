@@ -19,11 +19,7 @@ export type NewWidget = {
 export type WidgetSettings = {
   city?: string;
   noteValue?: string;
-  currencyValue?: string;
+  currency1?: string;
+  currency2?: string;
+  cur1tocur2?: number;
 };
-// export type WeatherSettings = {
-//   city: string;
-// };
-// export type NoteSettings = {
-//   value: string;
-// };

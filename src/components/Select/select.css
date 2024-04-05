@@ -5,23 +5,27 @@
   border-radius: 4px;
 }
 .selected-option {
-  padding-bottom: 5px;
+  padding: 10px;
+  padding-bottom: 0px;
 }
 .selected-option:hover {
   cursor: pointer;
 }
 .options {
-  width: 100%;
+  width: 150px;
   position: absolute;
+  top: 40px;
+  z-index: 1;
 }
 .option {
+  padding-left: 10px;
   background-color: rgb(255, 255, 255);
-  width: 100%;
+  width: calc(100%-10px);
   height: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 1px;
+  padding-bottom: 2px;
 }
 .option:hover {
-  background-color: rgb(215, 230, 242);
+  background-color: rgb(234, 238, 241);
   cursor: pointer;
 }

@@ -10,7 +10,6 @@ export interface IWeather {
 interface Props {
   settings: WidgetSettings;
 }
-
 export default function WeatherWidget(props: Props) {
   const { settings } = props;
   const [city, setCity] = React.useState(settings.city);
@@ -29,9 +28,16 @@ export default function WeatherWidget(props: Props) {
   return (
     <>
       <div className="weather">
-        <Select options={cities} selected={String(city)} onSelect={handleCitySelect}></Select>
-        <p>Погода сейчас</p>
-        <p>Температура: {weather?.temperature2m} °С</p>
+        <div className="select-weather">
+          <img src="public/img/location.svg" alt="place" />
+          <Select options={cities} selected={String(city)} onSelect={handleCitySelect}></Select>
+        </div>
+        <div className="weather-now">
+          <div>Погода сейчас</div>
+          <div className="degree">
+            {weather?.temperature2m} °<span>С</span>
+          </div>
+        </div>
       </div>
     </>
   );

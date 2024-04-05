@@ -17,7 +17,8 @@ export default function NoteWidget(props: Props) {
       <textarea
         value={note}
         onChange={handleNoteChange}
-        placeholder="Введите заметку..."
+        placeholder="Пустая заметка"
+        spellCheck="false"
         className="note-area"
       />
     </>
