@@ -55,11 +55,9 @@ export default function Widget(props: Props) {
     currentRef?.addEventListener('drag', handleDrag);
 
     return () => {
-      if (currentRef) {
-        currentRef.removeEventListener('dragstart', handleDragStart);
-        currentRef.removeEventListener('dragend', handleDragEnd);
-        currentRef.removeEventListener('drag', handleDrag);
-      }
+      currentRef?.removeEventListener('dragstart', handleDragStart);
+      currentRef?.removeEventListener('dragend', handleDragEnd);
+      currentRef?.removeEventListener('drag', handleDrag);
     };
   }, []);
   return (

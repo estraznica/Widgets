@@ -2,14 +2,10 @@ import './App.css';
 import React from 'react';
 import Column from './components/Column/Column';
 import { NewWidget, Id, WidgetSettings } from './types';
+import generateId from './utils/generateId';
 
 export default function App() {
   const [widgets, setWidgets] = React.useState<NewWidget[]>([]);
-  function generateId() {
-    let Id =
-      Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    return Id;
-  }
   const addWidget = (columnId: Id, type: string) => {
     let setting: WidgetSettings = {
       city: 'Екатеринбург',

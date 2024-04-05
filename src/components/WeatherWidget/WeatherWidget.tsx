@@ -29,7 +29,7 @@ export default function WeatherWidget(props: Props) {
     <>
       <div className="weather">
         <div className="select-weather">
-          <img src="public/img/location.svg" alt="place" />
+          <img src="/img/location.svg" alt="place" />
           <Select options={cities} selected={String(city)} onSelect={handleCitySelect}></Select>
         </div>
         <div className="weather-now">
