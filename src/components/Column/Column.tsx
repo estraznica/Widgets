@@ -3,28 +3,21 @@ import React from 'react';
 import Widget from '../Widget/Widget';
 import { NewWidget } from '../../types';
 import { ColumnType } from '../../types';
-import { Id } from '../../types';
-export default function Column({ id, type }: ColumnType) {
-  function generateId() {
-    let Id =
-      Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    return Id;
-  }
-  const [widgets, setWidgets] = React.useState<NewWidget[]>([]);
 
-  const addWidget = () => {
-    const widgetToAdd: NewWidget = {
-      id: generateId(),
-      type: type,
-      columnId: id,
-    };
-    setWidgets([...widgets, widgetToAdd]);
-  };
-
-  function deleteWidget(id: Id) {
-    const filteredWidgets = widgets.filter((widget) => widget.id !== id);
-    setWidgets(filteredWidgets);
-  }
+export default function Column({
+  id,
+  type,
+  widgets,
+  onSetWidgets,
+  onDeleteWidget,
+  onAddWidget,
+}: ColumnType) {
+  const [columnWidgets, setColumnWidgets] = React.useState<NewWidget[]>(
+    widgets.filter((widget) => widget.columnId == id),
+  );
+  React.useEffect(() => {
+    setColumnWidgets(widgets.filter((widget) => widget.columnId == id));
+  }, [widgets]);
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     const widgetId = event.dataTransfer.getData('widgetId');
@@ -38,22 +31,20 @@ export default function Column({ id, type }: ColumnType) {
       );
       if (targetIndex !== -1) {
         newWidgets.splice(targetIndex, 0, { ...widgets[draggedWidgetIndex], columnId: id });
-        setWidgets(newWidgets);
+        onSetWidgets(newWidgets);
       }
     }
   };
-
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
   };
-
   return (
     <>
       <div className="column" onDrop={handleDrop} onDragOver={handleDragOver}>
-        {widgets.map((widget) => (
-          <Widget widget={widget} key={widget.id} deleteWidget={() => deleteWidget(widget.id)} />
+        {columnWidgets.map((widget) => (
+          <Widget widget={widget} key={widget.id} deleteWidget={() => onDeleteWidget(widget.id)} />
         ))}
-        <button className="column_addwidgets_button" onClick={addWidget}>
+        <button className="column_addwidgets_button" onClick={() => onAddWidget(id, type)}>
           + Добавить виджет{type}
         </button>
       </div>

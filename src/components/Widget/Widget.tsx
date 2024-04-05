@@ -42,9 +42,9 @@ export default function Widget(props: Props) {
         <button className="delete-button" onClick={() => deleteWidget(widget.id)}>
           X
         </button>
-        {widget.type == ' погоды' && <WeatherWidget />}
-        {widget.type == '-заметку' && <NoteWidget />}
-        {widget.type == ' валют' && <CurencyWidget />}
+        {widget.type == ' погоды' && <WeatherWidget settings={widget.settings} />}
+        {widget.type == '-заметку' && <NoteWidget settings={widget.settings} />}
+        {widget.type == ' валют' && <CurencyWidget settings={widget.settings} />}
       </div>
     </>
   );

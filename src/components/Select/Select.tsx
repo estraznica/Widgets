@@ -3,10 +3,11 @@ import './select.css'; // Подключаем стили
 interface Props {
   options: string[];
   onSelect: (option: string) => void;
+  selected: string;
 }
-export default function Select({ options, onSelect }: Props) {
+export default function Select({ options, selected, onSelect }: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedOption, setSelectedOption] = React.useState('Екатеринбург');
+  const [selectedOption, setSelectedOption] = React.useState(selected);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
