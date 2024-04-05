@@ -32,6 +32,10 @@ export default function Column({
       if (targetIndex !== -1) {
         newWidgets.splice(targetIndex, 0, { ...widgets[draggedWidgetIndex], columnId: id });
         onSetWidgets(newWidgets);
+      } else {
+        widgets[draggedWidgetIndex].columnId = id;
+        newWidgets.push(widgets[draggedWidgetIndex]);
+        onSetWidgets(newWidgets);
       }
     }
   };

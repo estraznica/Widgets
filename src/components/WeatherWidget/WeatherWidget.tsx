@@ -14,7 +14,7 @@ interface Props {
 export default function WeatherWidget(props: Props) {
   const { settings } = props;
   const [city, setCity] = React.useState(settings.city);
-  let cities = ['Екатеринбруг', 'Москва', 'Санкт-Петербург'];
+  let cities = ['Екатеринбург', 'Москва', 'Санкт-Петербург'];
   const handleCitySelect = (selectedCity: string) => {
     setCity(selectedCity);
     settings.city = selectedCity;
