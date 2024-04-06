@@ -5,7 +5,9 @@ import { NewWidget, Id, WidgetSettings } from './types';
 import generateId from './utils/generateId';
 
 export default function App() {
+  //виджеты общие для всех колонок
   const [widgets, setWidgets] = React.useState<NewWidget[]>([]);
+
   const addWidget = (columnId: Id, type: string) => {
     let setting: WidgetSettings = {
       city: 'Екатеринбург',
@@ -30,10 +32,11 @@ export default function App() {
     };
     setWidgets([...widgets, widgetToAdd]);
   };
-  function deleteWidget(id: Id) {
+
+  const deleteWidget = (id: Id) => {
     const filteredWidgets = widgets.filter((widget) => widget.id !== id);
     setWidgets(filteredWidgets);
-  }
+  };
   return (
     <>
       <main>

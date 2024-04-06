@@ -15,26 +15,20 @@ export default function Widget(props: Props) {
   const widgetRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const handleDrag = () => {
-      const scrollThreshold = 10;
-      const scrollSpeed = 4;
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
+      //прокрутка окна во время перетаскивания
       const widgetRect = widgetRef.current?.getBoundingClientRect();
       if (widgetRect) {
-        const { left, right, top, bottom } = widgetRect;
-        const widgetCenterX = (left + right) / 2;
-        const widgetCenterY = (top + bottom) / 2;
-        if (widgetCenterY < scrollThreshold) {
-          window.scrollBy(0, -scrollSpeed); // Прокрутка вверх
+        if (widgetRect.top < 0) {
+          window.scrollBy(0, -10);
         }
-        if (widgetCenterY > windowHeight - scrollThreshold) {
-          window.scrollBy(0, scrollSpeed); // Прокрутка вниз
+        if (widgetRect.left < 0) {
+          window.scrollBy(-10, 0);
         }
-        if (widgetCenterX < scrollThreshold) {
-          window.scrollBy(-scrollSpeed, 0); // Прокрутка влево
+        if (widgetRect.bottom > window.innerHeight) {
+          window.scrollBy(0, 10);
         }
-        if (widgetCenterX > windowWidth - scrollThreshold) {
-          window.scrollBy(scrollSpeed, 0); // Прокрутка вправо
+        if (widgetRect.right > window.innerWidth) {
+          window.scrollBy(10, 0);
         }
       }
     };
