@@ -51,10 +51,6 @@ export default function Column({
   };
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
-    const targetIndex = Array.from(event.currentTarget.children).findIndex((element) =>
-      element.contains(event.target as Node),
-    );
-    console.log(targetIndex);
   };
   return (
     <>
