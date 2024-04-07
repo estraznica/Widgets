@@ -14,7 +14,7 @@ interface Props {
 export default function WeatherWidget(props: Props) {
   const { settings } = props;
   const [city, setCity] = React.useState(settings.city);
-  let cities = ['Екатеринбург', 'Москва', 'Санкт-Петербург'];
+  let cities = ['Екатеринбург', 'Афины', 'Джакарта'];
   const handleCitySelect = (selectedCity: string) => {
     setCity(selectedCity);
     settings.city = selectedCity;
@@ -25,18 +25,27 @@ export default function WeatherWidget(props: Props) {
     weatherCode: 0,
   });
   const [loading, setLoading] = React.useState(true);
+  let error = false;
   React.useEffect(() => {
-    fetchWeather(String(city)).then((result) => {
-      setWeater(result);
-      setLoading(false);
-    });
+    fetchWeather(String(city))
+      .then((result) => {
+        setWeater(result);
+        setLoading(false);
+      })
+      .catch(() => {
+        error = true;
+      });
   }, [city]);
   const updateWeather = () => {
     setLoading(true);
-    fetchWeather(String(city)).then((result) => {
-      setWeater(result);
-      setLoading(false);
-    });
+    fetchWeather(String(city))
+      .then((result) => {
+        setWeater(result);
+        setLoading(false);
+      })
+      .catch(() => {
+        error = true;
+      });
   };
   const background = getBackround(weatherCodes[weather?.weatherCode]);
 
@@ -61,6 +70,7 @@ export default function WeatherWidget(props: Props) {
           </div>
           <div className="weather-description">
             {loading ? '' : weatherCodes[weather?.weatherCode]}
+            {error && <>Ошибка</>}
           </div>
         </div>
       </div>

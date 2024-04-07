@@ -1,14 +1,15 @@
 import { fetchWeatherApi } from 'openmeteo';
 
 export async function fetchWeather(city: string) {
+  //Екатеринбург
   let latitude = 56.8519;
   let longitude = 60.6122;
-  if (city == 'Москва') {
-    latitude = 55.7522;
-    longitude = 37.6156;
-  } else if (city == 'Санкт-Петербург') {
-    latitude = 59.9386;
-    longitude = 30.3141;
+  if (city == 'Афины') {
+    latitude = 37.9838;
+    longitude = 23.7278;
+  } else if (city == 'Джакарта') {
+    latitude = -6.2146;
+    longitude = 106.8451;
   }
   const params = {
     latitude: latitude,

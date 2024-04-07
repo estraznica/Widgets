@@ -19,8 +19,8 @@ export default function App() {
     }
     if (type == ' валют') {
       setting = {
-        currency1: 'eur',
-        currency2: 'rub',
+        currency1: 'EUR',
+        currency2: 'RUB',
         cur1tocur2: 100,
       };
     }

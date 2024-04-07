@@ -4,9 +4,11 @@
   background-color: rgb(196, 255, 198);
   border-radius: 4px;
   margin-bottom: 10px;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 .today {
-  padding: 10px 0 0 10px;
+  padding-left: 10px;
 }
 .currency-values {
   display: flex;
@@ -23,4 +25,11 @@
 .currency-value {
   margin-left: 20px;
   font-size: 30px;
+}
+.currency-date {
+  padding-left: 10px;
+  font-size: 14px;
+}
+.currency-error {
+  padding-left: 10px;
 }
