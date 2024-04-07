@@ -21,3 +21,15 @@
 .note-area:focus {
   outline: 0px;
 }
+.note-area::-webkit-scrollbar {
+  width: 5px;
+}
+
+.note-area::-webkit-scrollbar-track {
+  background: #e1d8bb;
+}
+
+.note-area::-webkit-scrollbar-thumb {
+  background-color: #a49460;
+  border-radius: 5px;
+}
