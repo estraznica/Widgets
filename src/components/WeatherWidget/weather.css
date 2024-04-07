@@ -1,9 +1,27 @@
 .weather {
   width: 100%;
   min-height: 110px;
-  background-color: aliceblue;
+  background-color: rgb(223, 240, 255);
   border-radius: 4px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  transition: background-image 1s ease-in-out;
+}
+.cloud {
+  background-image: url('img/облачно.png');
+}
+.rain {
+  background-image: url('img/дождь.png');
+}
+.sun {
+  background-image: url('img/ясно.png');
+}
+.snow {
+  background-image: url('img/снег.png');
+}
+.no-background {
+  background-image: none;
 }
 .select-weather {
   width: 100%;
@@ -12,13 +30,12 @@
   align-items: center;
 }
 img {
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 10px;
 }
 .weather-now {
-  min-height: 60px;
-  padding-left: 20px;
-  padding-right: 20px;
+  height: 45px;
+  padding-left: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,4 +49,23 @@ img {
 }
 .degree span {
   font-size: 30px;
+}
+.weather-description {
+  height: 31px;
+  padding-left: 10px;
+}
+.update-weather {
+  border: 0;
+  background-color: rgba(240, 248, 255, 0);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-weather:hover {
+  cursor: pointer;
+}
+.update-weather img {
+  padding-top: 17px;
 }
