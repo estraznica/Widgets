@@ -2,16 +2,15 @@ import './weather.css';
 import React from 'react';
 import { fetchWeather, weatherCodes, getBackround } from '../../utils/fetchWeather';
 import Select from '../Select/Select';
-import { WidgetSettings } from '../../types';
-export interface IWeather {
+import { WidgetProps } from '../../types';
+
+interface IWeather {
   time: Date;
   temperature2m: number;
   weatherCode: number;
 }
-interface Props {
-  settings: WidgetSettings;
-}
-export default function WeatherWidget(props: Props) {
+
+export default function WeatherWidget(props: WidgetProps) {
   const { settings } = props;
   const [city, setCity] = React.useState(settings.city);
   let cities = ['Екатеринбург', 'Афины', 'Джакарта'];

@@ -1,13 +1,10 @@
 import './currency.css';
 import React from 'react';
-import { WidgetSettings } from '../../types';
+import { WidgetProps } from '../../types';
 import Select from '../Select/Select';
 import { fetchCurrency, Result } from '../../utils/fetchCurrency';
-interface Props {
-  settings: WidgetSettings;
-}
 
-export default function CurencyWidget(props: Props) {
+export default function CurencyWidget(props: WidgetProps) {
   const { settings } = props;
   const [currency, setCurrency] = React.useState(settings.currency1);
   let currencies = ['EUR', 'USD'];

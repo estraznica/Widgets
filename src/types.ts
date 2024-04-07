@@ -23,3 +23,6 @@ export type WidgetSettings = {
   currency2?: string;
   cur1tocur2?: number;
 };
+export type WidgetProps = {
+  settings: WidgetSettings;
+};

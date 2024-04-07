@@ -1,11 +1,8 @@
 import './note.css';
 import React from 'react';
-import { WidgetSettings } from '../../types';
-interface Props {
-  settings: WidgetSettings;
-}
+import { WidgetProps } from '../../types';
 
-export default function NoteWidget(props: Props) {
+export default function NoteWidget(props: WidgetProps) {
   const { settings } = props;
   const [note, setNote] = React.useState(settings.noteValue);
   const handleNoteChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
