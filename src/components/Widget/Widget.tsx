@@ -3,7 +3,7 @@ import React from 'react';
 import { NewWidget } from '../../types';
 import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import NoteWidget from '../NoteWidget/NoteWidget';
-import CurencyWidget from '../Сurrency/Currency';
+import CurencyWidget from '../СurrencyWidget/CurrencyWidget';
 import { Id } from '../../types';
 interface Props {
   widget: NewWidget;
