@@ -64,6 +64,9 @@ export const weatherCodes: WeatherCodes = {
   82: 'Ливень',
   85: 'Снегопад',
   86: 'Снегопад',
+  95: 'Гроза',
+  96: 'Гроза',
+  99: 'Гроза',
 };
 export function getBackround(weather: string) {
   let background = '';
@@ -77,7 +80,8 @@ export function getBackround(weather: string) {
     weather == 'Дождливо' ||
     weather == 'Дождь' ||
     weather == 'Сильный дождь' ||
-    weather == 'Ливень'
+    weather == 'Ливень' ||
+    weather == 'Гроза'
   ) {
     background = 'rain';
   }
